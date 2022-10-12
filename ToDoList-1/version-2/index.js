@@ -90,8 +90,11 @@ loginBtn.addEventListener('click', function(e){
         const name = loginInput.value;
         const userName = ('Hi '+name+'!!');
         userText.innerHTML = userName;
-
-        login.style.display = 'none';
+        if(name === ''){
+            alert('Please write your name.')
+        }else{
+            login.style.display = 'none';
+        }
     });
 
     closeBtn.addEventListener('click', function(){
