@@ -14,14 +14,15 @@ html {
     padding: 0;
     box-sizing: border-box;
 }
+
 /* Header start */
-header{
+header {
     display: flex;
     justify-content: space-between;
     padding: 30px 55px 150px 50px;
 }
 
-.user-info{
+.user-info {
     display: flex;
 }
 
@@ -30,8 +31,18 @@ header{
     width: 74px;
 }
 
-.user-info__text{
+.user-info__text {
     padding-top: 15px;
+}
+
+#tasks-pending {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    cursor: default;
+    color: var(--red);
+    font-weight: 500;
+    line-height: 1.8rem;
+
 }
 
 .user__text {
@@ -40,25 +51,21 @@ header{
     font-weight: 700;
     color: var(--dark-gray);
     line-height: 1.8rem;
-}
-
-.user__text--color {
-    color: var(--red);
-    font-weight: 500;
-    line-height: 1.8rem;
+    cursor: default;
 }
 
 .logo {
     margin-right: 250px;
-    
+
     font-family: 'Inter', sans-serif;
+    cursor: default;
     font-size: 4rem;
     font-weight: 700;
     line-height: 4.8rem;
     color: var(--dark-gray);
 }
 
-.logout {
+#logout {
     display: flex;
     align-items: center;
 
@@ -71,13 +78,14 @@ header{
     line-height: 1.8rem;
     cursor: pointer;
 }
+
 /* Header end */
 /* Main :start */
-main{
+main {
     padding-bottom: 55px;
 }
 
-.button-add {
+#button-add {
     display: flex;
     align-items: center;
     margin-left: 300px;
@@ -87,13 +95,13 @@ main{
     background-color: var(--white);
 }
 
-.btn__icon{
+.btn__icon {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 30px;
     height: 30px;
-    
+
     border-radius: 50%;
     border: 1px solid var(--purple);
     background-color: #B47AEA;
@@ -108,9 +116,10 @@ main{
 
     margin-left: 15px;
 }
+
 /* Main end */
 /* Tasks start */
-.section{
+.section {
     display: flex;
     align-items: center;
 }
@@ -119,33 +128,44 @@ main{
     margin-left: 300px;
 }
 
-.task{
-    display: flex; 
+.task {
+    display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.delete-btn{
+.delete-btn {
     border: none;
     background-color: var(--white);
     padding: 0;
+    cursor: pointer;
 }
 
-.delete-img{
+.delete-img {
     margin-right: 15px;
     border: none;
 }
 
 
-.task__text{
+.task__text {
+    border: none;
+    background-color: var(--white);
     font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 500;
     line-height: 1.8rem;
     color: var(--black);
+    cursor: default;
 }
 
-.add-btn-enable{
+.task__text:active,
+:hover,
+:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.add-btn-enable {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,7 +178,11 @@ main{
     height: 25px;
     cursor: pointer;
 }
-.add-btn-disable{
+
+.add-btn-disable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     background-color: var(--white);
     width: 25px;
@@ -168,20 +192,24 @@ main{
     padding: 0;
     margin-right: 20px;
 }
+
 /* Tasks end */
 /* Input start */
 #task-form {
     display: flex;
 }
 
-#task-input, #task-submit , .add-btn-enable, .delete-btn{
+#task-input,
+#task-submit,
+.add-btn-enable,
+.delete-btn {
     appearance: none;
     border: none;
     outline: none;
     background: none;
 }
 
-#task-input{
+#task-input {
     display: none;
     width: 500px;
     border: 1px solid var(--blue);
@@ -194,7 +222,7 @@ main{
 }
 
 #task-input::placeholder {
-    color:var(--dark-gray);
+    color: var(--dark-gray);
 }
 
 #task-submit {
@@ -203,7 +231,7 @@ main{
     font-size: 1.25rem;
     font-weight: 700;
     background-image: linear-gradient(to right, var(--blue),
-    var(--purple));
+            var(--purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     cursor: pointer;
@@ -221,7 +249,7 @@ main{
 /* Input end */
 /* Login start */
 #login {
-    display: flex;
+    display: none;
     justify-content: start;
     flex-direction: column;
     position: absolute;
@@ -230,8 +258,10 @@ main{
     right: 770px;
     top: 150px;
     padding: 0 0 50px 30px;
-    
+
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
     border: 2px solid var(--blue);
+    background-color: var(--white);
     border-radius: 30px;
     opacity: 0.9;
 }
@@ -241,7 +271,7 @@ main{
     justify-content: end;
 }
 
-.cancel-btn{
+.cancel-btn {
     margin-right: 20px;
     margin-top: 10px;
     cursor: pointer;
@@ -259,7 +289,7 @@ main{
     padding-bottom: 30px;
 
     text-align: left;
-    color: var(--black);
+    color: var(--darkest);
     font-size: 2rem;
     font-weight: 700;
 }
@@ -275,7 +305,7 @@ main{
     border-radius: 30px;
     width: 250px;
     height: 50px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 10px;
 }
 
@@ -290,5 +320,14 @@ main{
     font-size: 1.5rem;
     font-weight: 700;
 }
+
 /* Login end */
 
+.add-btn--style {
+    background-color: var(--blue);
+}
+
+.task__text--style {
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+}

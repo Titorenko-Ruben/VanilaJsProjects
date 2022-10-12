@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <!-- <div id="login">
+    <div id="login">
         <div class="cancel-wrapper">
             <button class="cancel-btn">
                 <img class="cancel-img" src="../../Images/ToDoList/Icons/cancel.svg">
@@ -24,20 +24,20 @@
             <input type="text" id="input-login" placeholder="Write your name.">
             <button class="input-btn">Login</button>
         </form>
-    </div> -->
+    </div>
     <header>
         <div class="user-info">
             <img class="user__png" src="../../Images/ToDoList/User/user-img.png">
             <div class="user-info__text">
                 <div class="user__text">Hi User!!</div>
-                <div class="user__text user__text--color">4 tasks pending</div>
+                <div id="tasks-pending">0 tasks pending</div>
             </div>
         </div>
         <div class="logo">TaskDo</div>
-        <button class="logout">Login</button>
+        <button id="logout">Login</button>
     </header>
     <main>
-        <button class="button-add">
+        <button id="button-add">
             <div class="btn__icon">
                 <img src="../../Images/ToDoList/Icons/+.svg">
             </div>
@@ -58,19 +58,15 @@
                 </button>
                 <button class="add-btn-disable">
                     <img class="add-img" src="../../Images/ToDoList/Icons/add.svg">
-                </button> -->
-                <!-- <button class="add-btn-enable"> 
-                    <img class="add-img" src="../../Images/ToDoList/Icons/add.svg">
-            </button> -->
-                <!-- <div class="task__text">Morning walk</div>
+                </button>
+                <input class="task__text" type="text" value="My task" readonly />
             </div> -->
         </div>
     </section>
 
-
-
-
-
+    <!-- <button class="add-btn-enable"> 
+            <img class="add-img" src="../../Images/ToDoList/Icons/add.svg">
+    </button> -->
 
 
     <script src="./index.js"></script>
