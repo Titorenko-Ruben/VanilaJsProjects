@@ -1,0 +1,225 @@
+:root {
+    --dark-gray: #5E5E5E;
+    --red: #EF6161;
+    --light-blue: #ADCACB;
+    --light-green: #87C159;
+    --purple: #B47AEA;
+    --black: #000000;
+    --blue: #1E9CEA;
+    --white: #fff;
+    --darker: #1F2937;
+    --darkest: #111827;
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Header start */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 30px 30px 50px 30px;
+}
+
+.logo-txt {
+    margin-right: 10px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    cursor: default;
+    color: var(--black);
+    font-weight: 700;
+    line-height: 1.8rem;
+}
+
+#button-theme {
+    border: none;
+    background-color: var(--white);
+}
+
+/* Header end */
+/* Weekly-Budget start */
+.weekly-budget__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50vw;
+    height: auto;
+    padding: 25px ;
+}
+
+#weekly-budget__input{
+        width: 500px;
+        border: 2px solid var(--blue);
+        padding: 20px;
+        border-radius: 25px;
+        margin-bottom: 12px;
+
+        font-size: 1.1rem;
+        outline: none;
+}
+
+#weekly-budget__button{
+    border: none;
+    background-color: var(--white);
+    color: var(--purple);
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#weekly-budget__button:hover {
+    opacity: 0.8;
+}
+
+#weekly-budget__button:active {
+    opacity: 0.6;
+}
+/* Weekly-Budget end */
+/* Main start */
+.main{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    padding: 25px;
+}
+
+.main__form{
+    margin-right: 150px;
+}
+
+.main__text{
+    margin-bottom: 10px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    cursor: default;
+    color: var(--darkest    );
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+
+#daily-expense{
+    display: flex;
+    flex-direction: column;
+}
+
+.common__text{
+    margin-bottom: 5px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    cursor: default;
+    color: var(--black);
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+
+#daily-expense__input{
+    outline: none;
+    border: 2px solid var(--blue);
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+#daily-expense__btn{
+    border: none;
+    background-color: var(--white);
+    color: var(--purple);
+    font-size: 1.35rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#daily-expense__btn:hover {
+    opacity: 0.8;
+}
+
+#daily-expense__btn:active {
+    opacity: 0.6;
+}
+/* SECOND PART */
+.main__budget-expenses{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.budget__wrapper{
+    border: 2px solid var(--blue);
+    background-color: var(--blue);
+    width: 300px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#budget__text{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    cursor: default;
+    color: var(--black);
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+
+.left__wrapper{
+    width: 300px;
+    padding: 5px;
+    margin-bottom: 10px;
+
+    border: 2px solid var(--light-green);
+    background-color: var(--light-green);
+}
+
+#left__text{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    cursor: default;
+    color: var(--black);
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+
+#expenses-list {
+
+}
+
+.expenses-list__txt{
+    margin-bottom: 10px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 1.35rem;
+    cursor: default;
+    color: var(--black);
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+/* Main end */
+/* Expense start */
+.expense {
+    padding: 10px 0;
+    border-bottom: 2px solid var(--light-blue);
+}
+
+.expense__text{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    cursor: default;
+    color: var(--black);
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+/* Expense end */
