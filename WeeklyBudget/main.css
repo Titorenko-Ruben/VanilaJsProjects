@@ -9,20 +9,21 @@
     --white: #fff;
     --darker: #1F2937;
     --darkest: #111827;
-    
+
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.content{
+.content {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 /* Header start */
 .header {
     display: flex;
@@ -44,32 +45,41 @@
 #button-theme {
     border: none;
     background-color: var(--white);
+    cursor: pointer;
+}
+
+#button-theme:hover {
+    opacity: 0.8;
+}
+
+#button-theme:active {
+    opacity: 0.6;
 }
 
 /* Header end */
 /* Weekly-Budget start */
-.weekly-budget__wrapper{
+#weekly-budget__wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 50vw;
     height: auto;
-    padding: 25px ;
+    padding: 25px;
 }
 
-#weekly-budget__input{
-        width: 500px;
-        border: 2px solid var(--blue);
-        padding: 20px;
-        border-radius: 25px;
-        margin-bottom: 12px;
+#weekly-budget__input {
+    width: 500px;
+    border: 2px solid var(--blue);
+    padding: 20px;
+    border-radius: 25px;
+    margin-bottom: 12px;
 
-        font-size: 1.1rem;
-        outline: none;
+    font-size: 1.1rem;
+    outline: none;
 }
 
-#weekly-budget__button{
+#weekly-budget__button {
     border: none;
     background-color: var(--white);
     color: var(--purple);
@@ -85,9 +95,10 @@
 #weekly-budget__button:active {
     opacity: 0.6;
 }
+
 /* Weekly-Budget end */
 /* Main start */
-.main{
+.main {
     display: flex;
     justify-content: space-between;
     width: auto;
@@ -95,27 +106,27 @@
     padding: 25px;
 }
 
-.main__form{
+.main__form {
     margin-right: 150px;
 }
 
-.main__text{
+.main__text {
     margin-bottom: 10px;
 
     font-family: 'Inter', sans-serif;
     font-size: 1.4rem;
     cursor: default;
-    color: var(--darkest    );
+    color: var(--darkest);
     font-weight: 500;
     line-height: 1.8rem;
 }
 
-#daily-expense{
+#daily-expense {
     display: flex;
     flex-direction: column;
 }
 
-.common__text{
+.common__text {
     margin-bottom: 5px;
 
     font-family: 'Inter', sans-serif;
@@ -126,7 +137,7 @@
     line-height: 1.8rem;
 }
 
-#daily-expense__input{
+#daily-expense__input--name {
     outline: none;
     border: 2px solid var(--blue);
     padding: 10px;
@@ -135,7 +146,16 @@
     margin-bottom: 10px;
 }
 
-#daily-expense__btn{
+#daily-expense__input--price {
+    outline: none;
+    border: 2px solid var(--blue);
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+#daily-expense__btn {
     border: none;
     background-color: var(--white);
     color: var(--purple);
@@ -151,14 +171,26 @@
 #daily-expense__btn:active {
     opacity: 0.6;
 }
+
+#low-balance__text{
+    display: none;
+    width: 270px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    cursor: default;
+    color: var(--red);
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+
 /* SECOND PART */
-.main__budget-expenses{
+.main__budget-expenses {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.budget__wrapper{
+.budget__wrapper {
     border: 2px solid var(--blue);
     background-color: var(--blue);
     width: 300px;
@@ -166,7 +198,7 @@
     margin-bottom: 10px;
 }
 
-#budget__text{
+#budget__text {
     font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
     cursor: default;
@@ -175,7 +207,7 @@
     line-height: 1.8rem;
 }
 
-.left__wrapper{
+.left__wrapper {
     width: 300px;
     padding: 5px;
     margin-bottom: 10px;
@@ -184,7 +216,7 @@
     background-color: var(--light-green);
 }
 
-#left__text{
+#left__text {
     font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
     cursor: default;
@@ -193,11 +225,9 @@
     line-height: 1.8rem;
 }
 
-#expenses-list {
+#expenses-list {}
 
-}
-
-.expenses-list__txt{
+.expenses-list__txt {
     margin-bottom: 10px;
 
     font-family: 'Inter', sans-serif;
@@ -207,6 +237,7 @@
     font-weight: 500;
     line-height: 1.8rem;
 }
+
 /* Main end */
 /* Expense start */
 .expense {
@@ -214,7 +245,7 @@
     border-bottom: 2px solid var(--light-blue);
 }
 
-.expense__text{
+.expense__text {
     font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
     cursor: default;
@@ -222,4 +253,9 @@
     font-weight: 500;
     line-height: 1.8rem;
 }
+
 /* Expense end */
+
+.color-red{
+    color: var(--red);
+}
