@@ -335,8 +335,4 @@
 .expenses-list__txt--dark{
     color: var(--dark-theme-white);
 }
-
-.expense__text--dark{
-    color: var(--dark-theme-white);
-}
 /* Dark theme end*/

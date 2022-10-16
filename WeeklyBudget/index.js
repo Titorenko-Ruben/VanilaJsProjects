@@ -90,5 +90,4 @@ buttonTheme.addEventListener('click', function(){
     budgetWrapper.classList.toggle('budget__wrapper--dark');
     leftWrapper.classList.toggle('left__wrapper--dark');
     expenseListText.classList.toggle('expenses-list__txt--dark');
-    expenseText.classList.toggle('expense__text--dark');
 });
