@@ -9,6 +9,10 @@
     --white: #fff;
     --darker: #1F2937;
     --darkest: #111827;
+    --dark-theme: #17161a;
+    --dark-theme-white: #f2f2f2;
+    --dark-theme-dark-gray:  #2a2930;
+
 
 }
 
@@ -44,8 +48,11 @@
 
 #button-theme {
     border: none;
-    background-color: var(--white);
     cursor: pointer;
+}
+
+.button-theme--bgc{
+    background-color: var(--white);
 }
 
 #button-theme:hover {
@@ -81,11 +88,14 @@
 
 #weekly-budget__button {
     border: none;
-    background-color: var(--white);
-    color: var(--purple);
     font-size: 1.5rem;
     font-weight: 700;
     cursor: pointer;
+}
+
+.weekly-budget__button--bgc{
+    background-color: var(--white);
+    color: var(--purple);
 }
 
 #weekly-budget__button:hover {
@@ -137,6 +147,17 @@
     line-height: 1.8rem;
 }
 
+.common__text--color{
+    margin-bottom: 5px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    cursor: default;
+    color: var(--black);
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+
 #daily-expense__input--name {
     outline: none;
     border: 2px solid var(--blue);
@@ -157,11 +178,14 @@
 
 #daily-expense__btn {
     border: none;
-    background-color: var(--white);
-    color: var(--purple);
     font-size: 1.35rem;
     font-weight: 700;
     cursor: pointer;
+}
+
+.daily-expense__btn--color{
+    background-color: var(--white);
+    color: var(--purple);
 }
 
 #daily-expense__btn:hover {
@@ -225,8 +249,6 @@
     line-height: 1.8rem;
 }
 
-#expenses-list {}
-
 .expenses-list__txt {
     margin-bottom: 10px;
 
@@ -249,13 +271,72 @@
     font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
     cursor: default;
-    color: var(--black);
+    color: var(--blue);
     font-weight: 500;
     line-height: 1.8rem;
 }
 
-/* Expense end */
-
 .color-red{
     color: var(--red);
 }
+/* Expense end */
+/* Dark theme start */
+.body--dark {
+    background-color: #17161a;
+}
+
+.logo-txt--dark{
+    color: var(--purple);
+}
+
+.button-theme--dark {
+    background-color: var(--dark-theme);
+}
+
+.weekly-budget__input--dark{
+    background-color: var(--dark-theme-dark-gray);
+    color: var(--dark-theme-white);
+}
+
+.weekly-budget__button--dark{
+    background-color: var(--dark-theme);
+}
+
+.main__text--dark {
+    color: var(--blue);
+}
+
+.common__text--dark{
+    color: var(--dark-theme-white);
+}
+
+.daily-expense__input--name--dark{
+    background-color: var(--dark-theme-dark-gray);
+    color: var(--dark-theme-white);
+}
+
+.daily-expense__input--price--dark{
+    background-color: var(--dark-theme-dark-gray); 
+    color: var(--dark-theme-white);
+}
+
+.daily-expense__btn--dark{
+    background-color: var(--dark-theme);
+}
+
+.budget__wrapper--dark{
+    border-radius: 15px;
+}
+
+.left__wrapper--dark{
+    border-radius: 15px;
+}
+
+.expenses-list__txt--dark{
+    color: var(--dark-theme-white);
+}
+
+.expense__text--dark{
+    color: var(--dark-theme-white);
+}
+/* Dark theme end*/

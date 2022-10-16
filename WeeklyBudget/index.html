@@ -12,11 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body id="body">
     <div class="content">
         <header class="header">
             <div class="logo-txt">My Weekly Budget</div>
-            <button id="button-theme">
+            <button id="button-theme" class="button-theme--bgc">
                 <img class="img__themes" src="../Images/WeeklyBudget/Icons/day-night1.svg">
             </button>
         </header>
@@ -25,7 +25,7 @@
         <div class="weekly-budget">
             <div id ="weekly-budget__wrapper">
                 <input id="weekly-budget__input" type="text" placeholder="Enter a Weekly Budget Amount" />
-                <button id="weekly-budget__button">Enter</button>
+                <button id="weekly-budget__button" class="weekly-budget__button--bgc">Enter</button>
             </div>
         </div>
 
@@ -36,9 +36,9 @@
                 <form id="daily-expense">
                     <div class="common__text">Name:</div>
                     <input id="daily-expense__input--name" type="text" placeholder="Example: milk" readonly>
-                    <div class="common__text">Price:</div>
+                    <div class="common__text--color">Price:</div>
                     <input id="daily-expense__input--price" type="text" placeholder="Example: 5" readonly>
-                    <button id="daily-expense__btn">Add</button>
+                    <button id="daily-expense__btn" class="daily-expense__btn--color">Add</button>
                 </form>
                 <p id="low-balance__text">You spent your weekly budget. Please take a credit.</p>
             </div>

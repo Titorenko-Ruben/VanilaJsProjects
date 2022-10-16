@@ -8,7 +8,8 @@ const expenseButton = document.querySelector('#daily-expense__btn');
 const expenseBudget = document.querySelector('#budget__text');
 const expenseLeft = document.querySelector('#left__text');
 const expenseList = document.querySelector('#expenses-list');
-const lowBalance = document.querySelector('#low-balance__text')
+const lowBalance = document.querySelector('#low-balance__text');
+const buttonTheme = document.querySelector('#button-theme');
 
 budgetInput.focus();
 
@@ -56,6 +57,7 @@ expenseForm.addEventListener('submit', function (e) {
 
     expense.appendChild(expenseText);
     expenseList.appendChild(expense);
+
 });
 
 function createCustomElement(tagName, className){
@@ -64,5 +66,29 @@ function createCustomElement(tagName, className){
     
     return elem; 
 };
+buttonTheme.addEventListener('click', function(){
+    const body = document.querySelector('#body');
+    const logoText = document.querySelector('.logo-txt');
+    const mainText = document.querySelector('.main__text');
+    const commonText = document.querySelector('.common__text');
+    const commonTextSecond = document.querySelector('.common__text--color');
+    const budgetWrapper = document.querySelector('.budget__wrapper');
+    const leftWrapper = document.querySelector('.left__wrapper');
+    const expenseListText = document.querySelector('.expenses-list__txt');
 
-
+    body.classList.toggle('body--dark');
+    logoText.classList.toggle('logo-txt--dark');
+    buttonTheme.classList.toggle('button-theme--dark');
+    budgetInput.classList.toggle('weekly-budget__input--dark');
+    budgetButton.classList.toggle('weekly-budget__button--dark');
+    mainText.classList.toggle('main__text--dark');
+    commonText.classList.toggle('common__text--dark');
+    commonTextSecond.classList.toggle('common__text--dark');
+    inputName.classList.toggle('daily-expense__input--name--dark');
+    inputPrice.classList.toggle('daily-expense__input--price--dark');
+    expenseButton.classList.toggle('daily-expense__btn--dark');
+    budgetWrapper.classList.toggle('budget__wrapper--dark');
+    leftWrapper.classList.toggle('left__wrapper--dark');
+    expenseListText.classList.toggle('expenses-list__txt--dark');
+    expenseText.classList.toggle('expense__text--dark');
+});
