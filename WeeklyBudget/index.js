@@ -10,6 +10,8 @@ const expenseLeft = document.querySelector('#left__text');
 const expenseList = document.querySelector('#expenses-list');
 const lowBalance = document.querySelector('#low-balance__text');
 const buttonTheme = document.querySelector('#button-theme');
+let array = [];
+let arrayGet = [];
 
 budgetInput.focus();
 
@@ -51,12 +53,27 @@ expenseForm.addEventListener('submit', function (e) {
         lowBalance.style.display = 'block';
     };
 
+    let item = {
+        name: userName,
+        price: userPrice    
+    };
+
+    array.push(item)
+
+    localStorage.setItem('Item', JSON.stringify(array))
+
+    arrayGet = localStorage.getItem('Item', array)
+
+    arrayGet = JSON.parse(arrayGet)
+
     const expense = createCustomElement('div', 'expense');
     const expenseText = createCustomElement('div', 'expense__text');
-    expenseText.innerHTML= (userName+': $'+userPrice);
+    expenseText.innerHTML= ((arrayGet[arrayGet.length -1].name)+': $'+(arrayGet[arrayGet.length -1].price));
 
     expense.appendChild(expenseText);
     expenseList.appendChild(expense);
+
+
 
 });
 
