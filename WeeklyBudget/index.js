@@ -11,9 +11,15 @@ const expenseList = document.querySelector('#expenses-list');
 const lowBalance = document.querySelector('#low-balance__text');
 const buttonTheme = document.querySelector('#button-theme');
 let array = [];
-let arrayGet = [];
 
 budgetInput.focus();
+
+if (window.location.pathname == '/WeeklyBudget/') {
+    if (!localStorage.getItem('Items') !== null ){
+     expenseUpdate()
+    }
+
+}
 
 budgetButton.addEventListener('click', function () {
     if (isNaN(budgetInput.value) || !budgetInput.value) {
@@ -38,7 +44,7 @@ expenseForm.addEventListener('submit', function (e) {
         userName = inputName.value;
         inputName.value = '';
     }
-    
+
     if (isNaN(inputPrice.value) || !inputPrice.value) {
         alert('Please write the price of product.');
     } else {
@@ -48,42 +54,28 @@ expenseForm.addEventListener('submit', function (e) {
         inputPrice.value = '';
     };
 
-    if (userBudgetLeft < 0){
+    if (userBudgetLeft < 0) {
         expenseLeft.style.color = 'red';
         lowBalance.style.display = 'block';
     };
 
     let item = {
         name: userName,
-        price: userPrice    
+        price: userPrice
     };
 
     array.push(item)
-
-    localStorage.setItem('Item', JSON.stringify(array))
-
-    arrayGet = localStorage.getItem('Item', array)
-
-    arrayGet = JSON.parse(arrayGet)
-
-    const expense = createCustomElement('div', 'expense');
-    const expenseText = createCustomElement('div', 'expense__text');
-    expenseText.innerHTML= ((arrayGet[arrayGet.length -1].name)+': $'+(arrayGet[arrayGet.length -1].price));
-
-    expense.appendChild(expenseText);
-    expenseList.appendChild(expense);
-
-
-
+    localStorage.setItem('Items', JSON.stringify(array))
+    expenseUpdate()
 });
 
-function createCustomElement(tagName, className){
+function createCustomElement(tagName, className) {
     const elem = document.createElement(tagName);
     elem.classList.add(className);
-    
-    return elem; 
+
+    return elem;
 };
-buttonTheme.addEventListener('click', function(){
+buttonTheme.addEventListener('click', function () {
     const body = document.querySelector('#body');
     const logoText = document.querySelector('.logo-txt');
     const mainText = document.querySelector('.main__text');
@@ -108,3 +100,19 @@ buttonTheme.addEventListener('click', function(){
     leftWrapper.classList.toggle('left__wrapper--dark');
     expenseListText.classList.toggle('expenses-list__txt--dark');
 });
+
+function expenseUpdate() {
+    let localExpenseData = localStorage.getItem('Items');
+    if (localExpenseData.length > 0) array = JSON.parse(localExpenseData)
+
+    expenseList.innerHTML = ''
+
+    array.forEach(function (item) {
+        const expense = createCustomElement('div', 'expense');
+        // const expenseText = createCustomElement('div', 'expense__text');
+        expense.innerHTML = `
+        <div class='expense__text'>${item.name}: ${item.price}$</div>   
+        `
+        expenseList.appendChild(expense);
+    })
+}
