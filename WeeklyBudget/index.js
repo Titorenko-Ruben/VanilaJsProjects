@@ -50,7 +50,7 @@ expenseForm.addEventListener('submit', function (e) {
         userName = inputName.value;
         inputName.value = '';
     }
-    
+
     if (isNaN(inputPrice.value) || !inputPrice.value) {
         alert('Please write the price of product.');
         return;
@@ -60,17 +60,17 @@ expenseForm.addEventListener('submit', function (e) {
         expenseLeft.innerHTML = ('Left: $' + userBudgetLeft);
         inputPrice.value = '';
     };
-    
+
     if (userBudgetLeft < 0) {
         expenseLeft.style.color = 'red';
         lowBalance.style.display = 'block';
     };
-    
+
     let item = {
         name: userName,
         price: userPrice
     };
-    
+
     array.push(item)
     localStorage.setItem('Items', JSON.stringify(array))
     expenseUpdate()
@@ -79,7 +79,7 @@ expenseForm.addEventListener('submit', function (e) {
 function createCustomElement(tagName, className) {
     const elem = document.createElement(tagName);
     elem.classList.add(className);
-    
+
     return elem;
 };
 
@@ -90,26 +90,26 @@ buttonTheme.addEventListener('click', function () {
     } else if (localStorage.getItem('darkTheme') == 'true') {
         localStorage.setItem('darkTheme', false)
         enableDarkTheme()
-    }else if(localStorage.getItem('darkTheme') == null){
+    } else if (localStorage.getItem('darkTheme') == null) {
         localStorage.setItem('darkTheme', true)
         enableDarkTheme()
     }
 })
 
-    function expenseUpdate() {
-        let localExpenseData = localStorage.getItem('Items');
-        if (localExpenseData.length > 0) array = JSON.parse(localExpenseData)
-        
-        expenseList.innerHTML = ''
-        
-        array.forEach(function (item) {
-            const expense = createCustomElement('div', 'expense');
-            expense.innerHTML = `
+function expenseUpdate() {
+    let localExpenseData = localStorage.getItem('Items');
+    if (localExpenseData.length > 0) array = JSON.parse(localExpenseData)
+
+    expenseList.innerHTML = ''
+
+    array.forEach(function (item) {
+        const expense = createCustomElement('div', 'expense');
+        expense.innerHTML = `
             <div class='expense__text'>${item.name}: ${item.price}$</div>   
             `
-            expenseList.appendChild(expense);
-        })
-    }
+        expenseList.appendChild(expense);
+    })
+}
 
 function enableDarkTheme() {
     const body = document.querySelector('#body');
@@ -137,7 +137,7 @@ function enableDarkTheme() {
         leftWrapper.classList.remove('left__wrapper--dark');
         expenseListText.classList.remove('expenses-list__txt--dark');
 
-    } else if(localStorage.getItem('darkTheme') == 'true'){
+    } else if (localStorage.getItem('darkTheme') == 'true') {
         body.classList.add('body--dark');
         logoText.classList.add('logo-txt--dark');
         buttonTheme.classList.add('button-theme--dark');

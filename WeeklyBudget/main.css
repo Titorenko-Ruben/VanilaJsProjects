@@ -248,8 +248,6 @@
 }
 
 .expenses-list__txt {
-    margin-bottom: 10px;
-
     font-family: 'Inter', sans-serif;
     font-size: 1.35rem;
     cursor: default;
