@@ -4,11 +4,7 @@ const budgetButton = document.querySelector('#weekly-budget__button');
 const expenseForm = document.querySelector('#daily-expense');
 const inputName = document.querySelector('#daily-expense__input--name');
 const inputPrice = document.querySelector('#daily-expense__input--price');
-const expenseButton = document.querySelector('#daily-expense__btn');
-const expenseBudget = document.querySelector('#budget__text');
 const expenseLeft = document.querySelector('#left__text');
-const expenseList = document.querySelector('#expenses-list');
-const lowBalance = document.querySelector('#low-balance__text');
 const buttonTheme = document.querySelector('#button-theme');
 let array = [];
 
@@ -27,6 +23,8 @@ if (localStorage.getItem('darkTheme') == 'false') {
 }
 
 budgetButton.addEventListener('click', function () {
+    const expenseBudget = document.querySelector('#budget__text');
+
     if (isNaN(budgetInput.value) || !budgetInput.value) {
         alert('Please write the amount.');
         budgetInput.value = '';
@@ -62,6 +60,7 @@ expenseForm.addEventListener('submit', function (e) {
     };
 
     if (userBudgetLeft < 0) {
+        const lowBalance = document.querySelector('#low-balance__text');
         expenseLeft.style.color = 'red';
         lowBalance.style.display = 'block';
     };
@@ -97,6 +96,7 @@ buttonTheme.addEventListener('click', function () {
 })
 
 function expenseUpdate() {
+    const expenseList = document.querySelector('#expenses-list');
     let localExpenseData = localStorage.getItem('Items');
     if (localExpenseData.length > 0) array = JSON.parse(localExpenseData)
 
@@ -113,6 +113,7 @@ function expenseUpdate() {
 
 function enableDarkTheme() {
     const body = document.querySelector('#body');
+    const expenseButton = document.querySelector('#daily-expense__btn');
     const logoText = document.querySelector('.logo-txt');
     const mainText = document.querySelector('.main__text');
     const commonText = document.querySelector('.common__text');
