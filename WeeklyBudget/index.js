@@ -15,7 +15,7 @@ let array = [];
 budgetInput.focus();
 
 if (window.location.pathname == '/WeeklyBudget/') {
-    if (!localStorage.getItem('Items') !== null ){
+    if (localStorage.getItem('Items') !== null ){
      expenseUpdate()
     }
 
@@ -40,6 +40,7 @@ expenseForm.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!inputName.value) {
         alert('Please write the name of product.');
+        return;
     } else {
         userName = inputName.value;
         inputName.value = '';
@@ -47,6 +48,7 @@ expenseForm.addEventListener('submit', function (e) {
 
     if (isNaN(inputPrice.value) || !inputPrice.value) {
         alert('Please write the price of product.');
+        return;
     } else {
         userPrice = inputPrice.value;
         userBudgetLeft = userBudgetLeft - userPrice
