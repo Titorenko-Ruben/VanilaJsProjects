@@ -1,0 +1,139 @@
+:root {
+    --dark-gray: #5E5E5E;
+    --red: #EF6161;
+    --light-blue: #ADCACB;
+    --light-green: #87C159;
+    --purple: #B47AEA;
+    --black: #000000;
+    --blue: #1E9CEA;
+    --white: #fff;
+    --darker: #1F2937;
+    --darkest: #111827;
+    --dark-theme: #17161a;
+    --dark-theme-white: #f2f2f2;
+    --dark-theme-dark-gray:  #2a2930;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 300px 300px;
+}
+
+.main__text{
+    margin-bottom: 40px;
+
+    color: var(--darkest);
+    font-family: 'Inter', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    cursor: default;
+}
+
+#main__button{
+    font-family: 'Inter', sans-serif;
+    border: none;
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--blue);
+    background-color: var(--white);
+    margin-bottom: 20px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+#main__button:hover{
+    opacity: 0.8;
+}
+
+#main__button:active{
+    opacity: 0.5;
+}
+
+/* GAME START */
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 75px 100px 0 100px;
+}
+
+#questions-numbers{
+    font-size: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--darkest);
+    cursor: default;
+}
+
+.score-wrapper{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.score__text{
+    font-size: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--darkest);
+    cursor: default;
+}
+
+#score__number{
+    font-size: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--blue);
+    cursor: default;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px 150px 0 150px;
+}
+
+#question{
+    margin-bottom: 50px;
+
+    font-weight: 700;
+    text-align: center;
+    color: var(--darkest);
+    font-family: 'Inter', sans-serif;
+    font-size: 4rem;
+    cursor: default;
+}
+
+#choise{
+    padding: 18px;
+    width: 800px;
+    height: 80px;
+    margin-bottom: 30px;
+
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border: none;
+    color: var(--darker);
+    cursor: pointer;
+}
+
+#choise:hover {
+    opacity: 0.8;
+}
+
+#choise:active {
+    opacity: 0.5;
+    width: 820px;
+    height: 90px;
+}
