@@ -1,0 +1,84 @@
+:root {
+    --dark-gray: #5E5E5E;
+    --red: #EF6161;
+    --light-blue: #ADCACB;
+    --light-green: #87C159;
+    --purple: #B47AEA;
+    --black: #000000;
+    --blue: #1E9CEA;
+    --white: #fff;
+    --darker: #1F2937;
+    --darkest: #111827;
+    --dark-theme: #17161a;
+    --dark-theme-white: #f2f2f2;
+    --dark-theme-dark-gray: #2a2930;
+    --git-hub-dark: #222222;
+    --git-hub-light: #9b9b9b;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--git-hub-light);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: var(--git-hub-dark);
+}
+
+.git-img {
+    margin-right: 12px;
+
+    width: 70px;
+    height: 7 0px;
+}
+
+#user-name__input {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--git-hub-dark);
+    color: var(--git-hub-light);
+    border-right: none;
+    border-bottom: 1px solid var(--git-hub-light);
+    font-size: 1.5rem;
+    width: 400px;
+    height: 35px;
+    outline: none;
+    font-weight: 700;
+}
+
+#user__wrapper{
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+}
+
+.user-img__wrapper{
+    margin-bottom: 10px;
+}
+
+.user-img{
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+}
+
+.user-info__text{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--git-hub-dark);
+}
+
+span{
+    color: var(--dark-theme-white);
+}
