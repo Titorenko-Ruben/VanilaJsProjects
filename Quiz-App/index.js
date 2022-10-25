@@ -82,11 +82,11 @@ let questionAndAnswers = [
         choise4: '4) 209',
         answer: '1) 206'
     }]
-    const task = document.querySelector('#question')
-    const firstChoise = document.querySelector('#first-choise')
-    const secondChoise = document.querySelector('#second-choise')
-    const thirdСhoise = document.querySelector('#third-choise')
-    const forthChoise = document.querySelector('#forth-choise')
+const task = document.querySelector('#question')
+const firstChoise = document.querySelector('#first-choise')
+const secondChoise = document.querySelector('#second-choise')
+const thirdСhoise = document.querySelector('#third-choise')
+const forthChoise = document.querySelector('#forth-choise')
 const scoreGameNumber = document.querySelector('#score__number')
 const numberOfQuestion = document.querySelector('#questions-numbers')
 
@@ -94,18 +94,26 @@ let taskNumber = 0;
 let score = 0;
 let numberTask = 1;
 
-if (window.location.pathname == '/Quiz-App/home.html') {
+let arrayAddress = window.location.href.split('/')
+arrayAddress.splice(0, 3)
+arrayAddress.pop()
+let address = arrayAddress.join('/')
+address = '/' + address
+console.log(address)
+
+
+if (window.location.pathname == address+'/home.html') {
     playButton.addEventListener('click', function () {
-        window.location.href = '/Quiz-App/game.html'
+        window.location.href = address+'/game.html'
     })
     leaderBoardButton.addEventListener('click', function () {
-        window.location.href = '/Quiz-App/leader-board.html'
+        window.location.href = address+'/leader-board.html'
     })
-    
+
 }
-if (window.location.pathname == '/Quiz-App/game.html') {
+if (window.location.pathname == address+'/game.html') {
     addNewTask()
-    
+
     firstChoise.addEventListener('click', function () {
         numberTask += 1
         if (firstChoise.innerHTML == questionAndAnswers[taskNumber].answer) {
@@ -113,7 +121,7 @@ if (window.location.pathname == '/Quiz-App/game.html') {
         }
         taskNumber += 1
         if (taskNumber === 10) {
-            window.location.href = '/Quiz-App/end.html'
+            window.location.href = address+'/end.html'
         }
         addNewTask()
     })
@@ -124,7 +132,7 @@ if (window.location.pathname == '/Quiz-App/game.html') {
         }
         taskNumber += 1
         if (taskNumber === 10) {
-            window.location.href = '/Quiz-App/end.html'
+            window.location.href = address+'/end.html'
         }
         addNewTask()
     })
@@ -135,7 +143,7 @@ if (window.location.pathname == '/Quiz-App/game.html') {
         }
         taskNumber += 1
         if (taskNumber === 10) {
-            window.location.href = '/Quiz-App/end.html'
+            window.location.href = address+'/end.html'
         }
         addNewTask()
     })
@@ -146,35 +154,35 @@ if (window.location.pathname == '/Quiz-App/game.html') {
         }
         taskNumber += 1
         if (taskNumber === 10) {
-            window.location.href = '/Quiz-App/end.html'
+            window.location.href = address+'/end.html'
         }
         addNewTask()
     })
-    
+
 }
 
-if (window.location.pathname == '/Quiz-App/end.html') {
+if (window.location.pathname == address+'/end.html') {
     const finalScore = document.querySelector('#final-score')
     const userNameInput = document.querySelector('#user-name__input')
     const saveButton = document.querySelector('#save__button')
     const homeButton = document.querySelector('#home__button')
     const retryButton = document.querySelector('#retry__button')
     let players = []
-    
+
     userNameInput.focus()
-    
+
     finalScore.innerHTML = (localStorage.getItem('score'))
-    
+
     saveButton.addEventListener('click', function () {
         if (userNameInput.value == '') {
             alert('Please full out the task')
             return
         }
-        
+
         let userName = userNameInput.value
         let userScore = (localStorage.getItem('score'))
-        
-        
+
+
         let user = {
             name: String(userName),
             points: userScore
@@ -184,25 +192,25 @@ if (window.location.pathname == '/Quiz-App/end.html') {
         localStorage.setItem('results', JSON.stringify(players))
         userNameInput.value = ''
         userNameInput.setAttribute('readonly', true)
-        
+
     })
-    
+
     homeButton.addEventListener('click', function () {
-        window.location.href = '/Quiz-App/home.html'
+        window.location.href = address+'/home.html'
         localStorage.setItem('score', 0)
     })
-    
+
     retryButton.addEventListener('click', function () {
-        window.location.href = '/Quiz-App/game.html'
+        window.location.href = address+'/game.html'
         localStorage.setItem('score', 0)
     })
 }
 
 const homeBtnFromBoard = document.querySelector('#home__button--leader-board')
 const leaderBoardList = document.querySelector('.leaders-list')
-if (window.location.pathname == '/Quiz-App/leader-board.html') {
+if (window.location.pathname == address+'/leader-board.html') {
     homeBtnFromBoard.addEventListener('click', function () {
-        window.location.href = '/Quiz-App/home.html';
+        window.location.href = address+'/home.html';
     })
     if (JSON.parse(localStorage.getItem('results')) != null) {
         let users = [];
@@ -224,12 +232,12 @@ function addNewTask() {
     if (score != undefined) {
         scoreGameNumber.innerHTML = score
     }
-    
+
     if (score > 200) {
         scoreGameNumber.classList.remove("score__number--color");
         scoreGameNumber.classList.add('color-yellow')
     }
-    
+
     if (score > 500) {
         scoreGameNumber.classList.remove("color-yellow");
         scoreGameNumber.classList.add('color-green')
