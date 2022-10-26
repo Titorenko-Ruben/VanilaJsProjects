@@ -28,8 +28,35 @@
     padding: 300px 300px;
 }
 
+.title {
+    display: flex;
+    align-items: center;
+}
+
+#dark-theme__btn {
+    margin-bottom: 30px;
+
+    cursor: pointer;
+    border: none;
+    background-color: var(--white);
+}
+
+#dark-theme__btn:hover {
+    opacity: 0.8;
+}
+
+#dark-theme__btn:active {
+    opacity: 0.5;
+}
+
+.dark-theme__img {
+    width: 32px;
+    height: 32px;
+}
+
 .main__text {
     margin-bottom: 40px;
+    margin-right: 10px;
 
     color: var(--darkest);
     font-family: 'Inter', sans-serif;
@@ -109,7 +136,7 @@
     cursor: default;
 }
 
-.score__number--color{
+.score__number--color {
     color: #FD0523;
 }
 
@@ -238,7 +265,7 @@
     cursor: pointer;
 }
 
-#home__button--leader-board{
+#home__button--leader-board {
     font-family: 'Inter', sans-serif;
     border: 2px solid var(--blue);
     background-color: var(--blue);
@@ -264,7 +291,7 @@
     cursor: pointer;
 }
 
-.hover-effects{
+.hover-effects {
     cursor: pointer;
 }
 
@@ -304,18 +331,41 @@
 .user-text {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--darker);
+}
+
+.goat__text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     font-size: 2rem;
-    color: var(--blue);
+    color: var(--light-green);
+
+}
+
+.good-job__text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #e2d32c;
+}
+
+.lame__text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--red);
 }
 
 /* lEADER-BOARD END */
 /* colors for numbers START */
 
-.color-yellow{
-color: #F9E92F;
+.color-yellow {
+    color: #F9E92F;
 }
 
-.color-green{
-color: #87DD28;
+.color-green {
+    color: #87DD28;
 }
+
 /* colors for numbers END */

@@ -99,8 +99,6 @@ arrayAddress.splice(0, 3)
 arrayAddress.pop()
 let address = arrayAddress.join('/')
 address = '/' + address
-console.log(address)
-
 
 if (window.location.pathname == address+'/home.html') {
     playButton.addEventListener('click', function () {
@@ -190,9 +188,10 @@ if (window.location.pathname == address+'/end.html') {
         players = JSON.parse(localStorage.getItem('results')) || []
         players.push(user)
         localStorage.setItem('results', JSON.stringify(players))
-        userNameInput.value = ''
-        userNameInput.setAttribute('readonly', true)
-
+        // userNameInput.value = ''
+        // userNameInput.setAttribute('readonly', true)
+        saveButton.style.display= 'none';
+        userNameInput.style.display= 'none';
     })
 
     homeButton.addEventListener('click', function () {
@@ -208,6 +207,9 @@ if (window.location.pathname == address+'/end.html') {
 
 const homeBtnFromBoard = document.querySelector('#home__button--leader-board')
 const leaderBoardList = document.querySelector('.leaders-list')
+const goatsList = document.querySelector('#goats-list')
+const goodJobList = document.querySelector('#good-job-list')
+const lamesList = document.querySelector('#lame-list')
 if (window.location.pathname == address+'/leader-board.html') {
     homeBtnFromBoard.addEventListener('click', function () {
         window.location.href = address+'/home.html';
@@ -217,7 +219,13 @@ if (window.location.pathname == address+'/leader-board.html') {
         users = JSON.parse(localStorage.getItem('results'))
         users.forEach(function (value, index) {
             let element = createCustomElement('div', 'user-score', users[index].name, users[index].points)
-            leaderBoardList.appendChild(element)
+            if(users[index].points == 1000 || users[index].points == 900 || users[index].points == 800){
+                goatsList.appendChild(element)
+            }else if(users[index].points == 700 || users[index].points == 600 || users[index].points == 500){
+                goodJobList.appendChild(element)
+            }else{
+                lamesList.appendChild(element)
+            }
         })
     }
 }
