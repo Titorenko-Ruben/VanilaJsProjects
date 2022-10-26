@@ -6,6 +6,7 @@
     --light: #EEE;
     --pink: #EC4899;
     --purple: #8B5Cf6;
+    --red: #EF6161;
 }
 
 * {
@@ -154,5 +155,5 @@ main {
 }
 
 .task .actions .delete {
-    color: crimson;
+    color:var(--red);
 }

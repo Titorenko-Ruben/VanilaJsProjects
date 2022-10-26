@@ -1,69 +1,66 @@
-window.addEventListener('load', function(){
-    const form = document.querySelector('#task-form');
-    const input = document.querySelector('#task-input');
-    const list_el = document.querySelector('#tasks');
+const form = document.querySelector('#task-form');
+const input = document.querySelector('#task-input');
+const listEl = document.querySelector('#tasks');
 
-    form.addEventListener('submit', function(e){
-        e.preventDefault();
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-        const task = input.value;
+    const task = input.value;
 
-        if(!task){
-            alert('Please fill out the task');
-            return;
+    if (!task) {
+        alert('Please fill out the task');
+        return;
+    }
+
+    const taskEl = createCustomElement('div', 'task');
+    const taskContentEl = createCustomElement('div', 'content');
+
+    taskEl.appendChild(taskContentEl);
+
+    const taskInputEl = createCustomElement('input', 'text');
+    taskInputEl.type = 'text';
+    taskInputEl.value = task;
+    taskInputEl.setAttribute('readonly', true);
+
+    taskContentEl.appendChild(taskInputEl);
+
+    const taskActionsEl = createCustomElement('div', 'actions');
+
+    const task_edit_el = createCustomElement('button', 'edit');
+    task_edit_el.innerHTML = 'Edit';
+
+    const task_delete_el = createCustomElement('button', 'delete');
+    task_delete_el.innerHTML = 'Delete';
+
+    taskActionsEl.appendChild(task_edit_el);
+    taskActionsEl.appendChild(task_delete_el);
+
+    taskEl.appendChild(taskActionsEl);
+
+    listEl.appendChild(taskEl);
+
+    input.value = '';
+
+    task_edit_el.addEventListener('click', function () {
+        if (task_edit_el.innerText.toLowerCase() == 'edit') {
+            taskInputEl.removeAttribute('readonly');
+            taskInputEl.focus();
+            task_edit_el.innerText = 'Save';
+        } else {
+            taskInputEl.setAttribute('readonly', true);
+            task_edit_el.innerText = 'Edit';
         }
-
-        const task_el = document.createElement('div');
-        task_el.classList.add('task');
-
-        const task_content_el = document.createElement('div');
-        task_content_el.classList.add('content');
-
-        task_el.appendChild(task_content_el);
-
-        const task_input_el = document.createElement('input');
-        task_input_el.classList.add('text');
-        task_input_el.type = 'text';
-        task_input_el.value = task;
-        task_input_el.setAttribute('readonly', 'readonly');
-
-        task_content_el.appendChild(task_input_el);
-
-        const task_actions_el = document.createElement('div');
-        task_actions_el.classList.add('actions');
-
-        const task_edit_el = document.createElement('button');
-        task_edit_el.classList.add('edit');
-        task_edit_el.innerHTML ='Edit';
-
-
-        const task_delete_el = document.createElement('button');
-        task_delete_el.classList.add('delete');
-        task_delete_el.innerHTML ='Delete';
-
-        task_actions_el.appendChild(task_edit_el);
-        task_actions_el.appendChild(task_delete_el);
-
-        task_el.appendChild(task_actions_el);
-
-        list_el.appendChild(task_el);
-
-        input.value = '';
-
-        task_edit_el.addEventListener('click', function(){
-            if(task_edit_el.innerText.toLowerCase() == 'edit'){
-                task_input_el.removeAttribute('readonly');
-                task_input_el.focus();
-                task_edit_el.innerText = 'Save';
-            }else{
-                task_input_el.setAttribute('readonly', 'readonly');
-                task_edit_el.innerText = 'Edit';
-            }
-        });
-
-        task_delete_el.addEventListener('click',function(){
-            list_el.removeChild(task_el);
-        });
-
     });
+
+    task_delete_el.addEventListener('click', function () {
+        listEl.removeChild(taskEl);
+    });
+
 });
+
+function createCustomElement(tagName, className) {
+    const elem = document.createElement(tagName);
+    elem.classList.add(className);
+
+    return elem
+}
